@@ -39,3 +39,13 @@ A layout.js file is a UI file that is shared between routes. A root layout is th
 
 We can create layout.js file inside subdirectories giving them their of shared UI within their own subdirectory.
 
+## loading.js 
+A loading file can create instant loading states
+``export default function Loading() {``
+  ``// Or a custom loading skeleton component``
+  ``return <p>'Loading...'</p>``
+``}``
+
+## error.js
+An error file defines an error UI boundary for a route segment.
+``'use client'`` // Error components must be Client Components
