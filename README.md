@@ -34,3 +34,8 @@ Instead of creating routes for every single page, nextjs creates routes for us w
 
 **We can create dynamic pages using the []. This can be folder or file and inside the [] we have the id. For example:  posts/[postId]** 
 
+## layout.js
+A layout.js file is a UI file that is shared between routes. A root layout is the top-most layout in the root app directory. It is used to define the <html> and <body> tags and other globally shared UI.
+
+We can create layout.js file inside subdirectories giving them their of shared UI within their own subdirectory.
+
