@@ -16,36 +16,19 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-## "use client"
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-By default any component in the app folder directory is rendered in server side. If we want to turn that into a client side component we simply just write `` 'use client' `` directive on top of that component.
-It is important to declare any component to be rendered in the client side for using react functionalities such as `` useState ``, `` useEffect ``, or `` useContext ``
+## Learn More
 
-When to use `` 'use client' `` and when not to use `` 'use client' `` can be found in the docs here: [the use client directive](https://nextjs.org/docs/getting-started/react-essentials#the-use-client-directive) 
+To learn more about Next.js, take a look at the following resources:
 
-or as they put it:
-*To simplify the decision between Server and Client Components, we recommend using Server Components (default in the app directory) until you have a use case for a Client Component.*
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## Routing and Nested Routing
-Instead of creating routes for every single page, nextjs creates routes for us when we create a new directory and nested directory. 
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-`` app/page.js `` is the homepage of the website. *example url: localhost:3000* 
-`` app/posts/page.js `` is the route /posts created by next.js automatically.
+## Deploy on Vercel
 
-**We can create dynamic pages using the []. This can be folder or file and inside the [] we have the id. For example:  posts/[postId]** 
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## layout.js
-A layout.js file is a UI file that is shared between routes. A root layout is the top-most layout in the root app directory. It is used to define the <html> and <body> tags and other globally shared UI.
-
-We can create layout.js file inside subdirectories giving them their of shared UI within their own subdirectory.
-
-## loading.js 
-A loading file can create instant loading states
-``export default function Loading() {``
-  ``// Or a custom loading skeleton component``
-  ``return <p>'Loading...'</p>``
-``}``
-
-## error.js
-An error file defines an error UI boundary for a route segment.
-``'use client'`` // Error components must be Client Components
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
