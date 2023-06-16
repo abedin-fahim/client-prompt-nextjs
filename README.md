@@ -25,3 +25,12 @@ When to use `` 'use client' `` and when not to use `` 'use client' `` can be fou
 
 or as they put it:
 *To simplify the decision between Server and Client Components, we recommend using Server Components (default in the app directory) until you have a use case for a Client Component.*
+
+## Routing and Nested Routing
+Instead of creating routes for every single page, nextjs creates routes for us when we create a new directory and nested directory. 
+
+`` app/page.js `` is the homepage of the website. *example url: localhost:3000* 
+`` app/posts/page.js `` is the route /posts created by next.js automatically.
+
+**We can create dynamic pages using the []. This can be folder or file and inside the [] we have the id. For example:  posts/[postId]** 
+
