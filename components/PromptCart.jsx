@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const PromptCart = () => {
-  return (
-    <div>PromptCart</div>
-  )
-}
+  return <div>PromptCart</div>;
+};
 
-export default PromptCart
+export default PromptCart;
