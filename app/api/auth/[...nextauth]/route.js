@@ -28,6 +28,7 @@ const handler = NextAuth({
         await connectToDB();
 
         // check if user already exists
+        console.log('here');
         const userExists = await User.findOne({ email: profile.email });
 
         // if not, create a new document and save user in MongoDB
@@ -42,7 +43,7 @@ const handler = NextAuth({
         return true;
       } catch (error) {
         console.log('Error checking if user exists: ', error.message);
-        return true;
+        return false;
       }
     },
   },
