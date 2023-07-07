@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
@@ -20,7 +21,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           </span>
           <textarea
             value={post.prompt}
-            onChange={(e) => setPost([...post, e.target.value])}
+            onChange={(e) => setPost({ ...post, prompt: e.target.value })}
             placeholder='Write your prompt here'
             required
             className='form_textarea'
@@ -32,7 +33,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           </span>
           <input
             value={post.tag}
-            onChange={(e) => setPost([...tag, e.target.value])}
+            onChange={(e) => setPost({ ...post, tag: e.target.value })}
             placeholder='#tag'
             required
             className='form_input'
