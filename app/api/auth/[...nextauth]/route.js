@@ -3,7 +3,6 @@ import GoogleProvider from 'next-auth/providers/google';
 
 import User from '@models/user';
 import connectToDB from '@utils/database';
-
 const handler = NextAuth({
   providers: [
     GoogleProvider({
@@ -11,24 +10,19 @@ const handler = NextAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
-  secret: process.env.SECRET,
   callbacks: {
     async session({ session }) {
       // store the user id from MongoDB to session
-      session: async (session, user) => {
-        const sessionUser = await User.findOne({ email: session.user.email });
-        return {
-          ...session,
-          user: { ...session.user, id: sessionUser._id.toString() },
-        };
-      };
+      const sessionUser = await User.findOne({ email: session.user.email });
+      session.user.id = sessionUser._id.toString();
+
+      return session;
     },
-    async signIn({ account, email, profile, user, credentials }) {
+    async signIn({ account, profile, user, credentials }) {
       try {
         await connectToDB();
 
         // check if user already exists
-        console.log('here');
         const userExists = await User.findOne({ email: profile.email });
 
         // if not, create a new document and save user in MongoDB

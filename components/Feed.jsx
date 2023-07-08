@@ -23,6 +23,8 @@ const Feed = () => {
   // Search States
   const [searchText, setSearchText] = useState('');
 
+  const handleTagClick = (e) => {};
+
   const fetchPosts = async () => {
     const response = await fetch('/api/prompt');
     const data = await response.json();
